@@ -14,7 +14,7 @@
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/custom.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.css" media="screen">
 
   </head>
 
@@ -78,27 +78,15 @@
           <div class="title">Our Works<span class="total">52 Works in Total</span> </div>
         </div>
         <div class="row">
-            <div class="col-sm-4 img-no-pad">
-              <img src="images/land1.jpg" />
-            </div>
-            <div class="col-sm-4 img-no-pad">
-              <img src="images/land2.jpg" />
-            </div>
-            <div class="col-sm-4 img-no-pad">
-              <img src="images/land3.jpg" />
-            </div>
-        </div> 
-        <div class="row">
-            <div class="col-sm-4 img-no-pad">
-              <img src="images/land6.jpg" />
-            </div>
-            <div class="col-sm-4 img-no-pad">
-              <img src="images/land5.jpg" />
-            </div>
-            <div class="col-sm-4 img-no-pad">
-              <img src="images/land4.jpg" />
-            </div>
-        </div> 
+          <div id="grid" class="grid">
+            <div class="grid-item morph pic"><img src="images/land1.jpg" /></div>
+            <div class="grid-item morph pic"><img src="images/land2.jpg" /></div>
+            <div class="grid-item morph pic"><img src="images/land3.jpg" /></div>
+            <div class="grid-item morph pic"><img src="images/land4.jpg" /></div>
+            <div class="grid-item morph pic"><img src="images/land5.jpg" /></div>
+            <div class="grid-item morph pic"><img src="images/land6.jpg" /></div>
+          </div>
+        </div>
 
         <div class="row team" id="team">
           <div class="title">Our Team</div>
@@ -201,6 +189,18 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="slider/slider.js"></script>
+    <script src="slider/masonry.pkgd.min.js"></script>
+    <script src="slider/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
     <script>jssor_1_slider_init();</script>
+    <script type="text/javascript">
+      var $container = $('#grid');
+      $container.imagesLoaded(function(){
+        $container.masonry({
+          itemSelector : '.grid-item',
+          fitWidth: true
+        });
+      });
+    </script>
   </body>
 </html>
