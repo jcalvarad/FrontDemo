@@ -217,3 +217,9 @@ img {
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
 }
+
+/* Carousel */
+
+.carousel-cell {
+  width: 20%;
+}
